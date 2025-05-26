@@ -1,6 +1,5 @@
 #!/usr/bin/env python3
 import pyautogui
-import os
 import mediapipe as mp
 import cv2
 import numpy as np
