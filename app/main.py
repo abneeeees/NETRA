@@ -14,7 +14,7 @@ with mp_hands.Hands(max_num_hands=1, min_detection_confidence=0.1, min_tracking_
         suc, img = cap.read()
         img = cv2.flip(img, 1)
         img = cv2.cvtColor(img, cv2.COLOR_BGR2RGB)
-        img = cv2.resize(img , dsize=(480 , 270))
+        # img = cv2.resize(img , dsize=(480 , 270))
         results = hands.process(img)
 
         img = cv2.cvtColor(img, cv2.COLOR_RGB2BGR)
