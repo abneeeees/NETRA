@@ -1,19 +1,21 @@
 #! usr/bin/env python3
 
 from model import *
-from motion import Cursor
+from motion import Cursor , Navigator
 
 def main():
 
     cam = VideoCamera()
     tracker = HandTrackingModule()
-    mover = Cursor()
+    mover1 = Cursor()
+    mover2 = Navigator()
 
     while True:
         frame = cam.get_frame()
         processed_frame, new_landmarks = tracker.hand_tracing(frame)
         
-        mover.cursor_move(new_landmarks)
+        # mover1.cursor_move(new_landmarks)
+        mover2.window_move(new_landmarks)
         cam.run_camera(new_frame=processed_frame)
         if cv2.waitKey(1) & 0xFF == ord('q'):
             break    
