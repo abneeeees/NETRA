@@ -41,4 +41,3 @@ class Navigator:
                     elif dy < -0.1:
                         os.system('xdotool key Super_L')
 
-q
